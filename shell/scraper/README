@@ -1,0 +1,13 @@
+#                  README FOR SCRAPER
+# scraper will leach files from a list of given websites
+# conatined in a file (residing in the same path as scraper.sh)
+# $fn=.sites
+#
+# typically I do the following:  
+# echo http://mysite.com > .sites
+# echo http://mysite2.com >> .sites
+#
+# edit the shell file if you want files other than *.gif
+# or *.jpg/jpeg.
+# 
+# usage: ./scraper path
