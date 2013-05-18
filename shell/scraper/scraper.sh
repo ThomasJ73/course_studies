@@ -1,19 +1,14 @@
 #!/bin/sh
 for line in `cat .sites`; do
-  # replace http://
-  stripped_url=`echo $line| cut -c8-`
-  target_folder="$1"
+  n_url=`echo $line| cut -c8-`
+  target="$1"
 
-  echo $stripped_url
+  echo $n_url
+  echo "raping $n_url >"
   echo ""
-  echo ""
-  echo ""
-  echo "Scraping $stripped_url"
-  echo "-----------------------------------"
- # echo "> creating folder.."
-  echo $target_folder
- # mkdir -p $target_folder
-  echo "> scraping $stripped_url"
+  echo $target
+  mkdir -p $target
+  echo "> scraping $n_url"
   wget -e robots=off \
     -H -nd -nc -np \
     --recursive -p \
@@ -22,8 +17,7 @@ for line in `cat .sites`; do
     --convert-links -N \
     --limit-rate=400k \
     --wait 1.0 \
-    -P $target_folder $stripped_url
+    -P $target $n_url
   echo ""
-  echo ""
-  echo "> Finished scraping $stripped_url"
+  echo "> $n_url has been raped.."
 done
