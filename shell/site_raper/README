@@ -1,0 +1,14 @@
+#                  README FOR RAPER
+# scraper will leach files from a list of given websites
+# conatined in a file (residing in the same path as raper.sh)
+# $fn = .sites
+#
+# typically I do the following:  
+# echo http://mysite.com > .sites 'first site to leach
+# echo http://mysite2.com >> .sites 'second
+#
+# edit the shell file if you want files other than *.gif
+# or *.jpg/jpeg.  Always seperate them with a comma, no
+# spaces.
+# 
+# usage: ./raper /home/user/Pictures/
